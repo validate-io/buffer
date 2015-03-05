@@ -26,7 +26,12 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "buffer",
+    "node",
+    "is",
+    "isbuffer"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/buffer/issues"

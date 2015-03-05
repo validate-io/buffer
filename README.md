@@ -14,21 +14,41 @@ $ npm install validate.io-buffer
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
 
 
+__Note__: while the module does not have any dependencies, the module is really only useful in the browser when combined with a browserified [Buffer](https://github.com/feross/buffer) module.
+
+
+
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-buffer' );
+var isBuffer = require( 'validate.io-buffer' );
 ```
 
-#### foo( value )
+#### isBuffer( value )
 
-What does this function do?
+Validates if a `value` is a `Buffer` object.
+
+``` javascript
+var value = new Buffer( [1,2,3,4] );
+
+var bool = isBuffer( value );
+// returns true
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-buffer' );
+var isBuffer = require( 'validate.io-buffer' );
+
+console.log( isBuffer( new Buffer( [1,2,3,4] ) ) );
+// returns true
+
+console.log( isBuffer( new Buffer( 'beep' ) ) );
+// returns true
+
+console.log( isBuffer( [] ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,
