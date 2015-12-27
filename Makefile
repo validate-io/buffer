@@ -125,7 +125,7 @@ test-browsers: test-testling
 test-testling: node_modules
 	NODE_ENV=$(NODE_ENV) \
 	NODE_PATH=$(NODE_PATH_TEST) \
-	$(TESTLING) -u
+	$(TESTLING)
 
 
 
