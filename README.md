@@ -2,7 +2,7 @@ buffer
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Validates if a value is a Buffer object.
+> Validates if a value is a [Buffer][node-buffer] object.
 
 
 ## Installation
@@ -11,7 +11,7 @@ buffer
 $ npm install validate.io-buffer
 ```
 
-For use in the browser, use [browserify][browserify].
+For use in the [browser][browser-buffer], use [browserify][browserify].
 
 
 ## Usage
@@ -22,7 +22,7 @@ var isBuffer = require( 'validate.io-buffer' );
 
 #### isBuffer( value )
 
-Validates if a `value` is a `Buffer` object.
+Validates if a `value` is a [`Buffer`][node-buffer] object.
 
 ``` javascript
 var value = new Buffer( [1,2,3,4] );
