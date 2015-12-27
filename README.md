@@ -1,6 +1,6 @@
 buffer
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Validates if a value is a Buffer object.
 
@@ -11,10 +11,10 @@ buffer
 $ npm install validate.io-buffer
 ```
 
-For use in the browser, use [browserify](https://github.com/substack/node-browserify).
+For use in the browser, use [browserify][browserify].
 
 
-__Note__: while the module does not have any dependencies, the module is really only useful in the browser when combined with a browserified [Buffer](https://github.com/feross/buffer) module.
+__Note__: while the module does not have any dependencies, the module is really only useful in the browser when combined with a browserified [Buffer][browser-buffer] module.
 
 
 
@@ -62,7 +62,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha][mocha] test framework with [Chai][chai] assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -73,7 +73,7 @@ All new feature development should have corresponding unit tests to validate cor
 
 ### Test Coverage
 
-This repository uses [Istanbul](https://github.com/gotwarlost/istanbul) as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
+This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test-cov
@@ -84,6 +84,17 @@ Istanbul creates a `./reports/coverage` directory. To access an HTML version of 
 ``` bash
 $ make view-cov
 ```
+
+
+### Browser Support
+
+This repository uses [Testling][testling] as its browser testing tool. To run the tests in web browsers, execute the following command in the top-level application directory:
+
+``` bash
+$ make test-browsers
+```
+
+[![browser support][testling-image]][testling-url]
 
 
 ---
@@ -103,8 +114,8 @@ Copyright &copy; 2015. Athan Reines.
 [travis-image]: http://img.shields.io/travis/validate-io/buffer/master.svg
 [travis-url]: https://travis-ci.org/validate-io/buffer
 
-[coveralls-image]: https://img.shields.io/coveralls/validate-io/buffer/master.svg
-[coveralls-url]: https://coveralls.io/r/validate-io/buffer?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/validate-io/buffer/master.svg
+[codecov-url]: https://codecov.io/github/validate-io/buffer?branch=master
 
 [dependencies-image]: http://img.shields.io/david/validate-io/buffer.svg
 [dependencies-url]: https://david-dm.org/validate-io/buffer
@@ -114,3 +125,15 @@ Copyright &copy; 2015. Athan Reines.
 
 [github-issues-image]: http://img.shields.io/github/issues/validate-io/buffer.svg
 [github-issues-url]: https://github.com/validate-io/buffer/issues
+
+[testling-image]: https://ci.testling.com/validate-io/buffer.png
+[testling-url]: https://ci.testling.com/validate-io/buffer
+
+[browserify]: https://github.com/substack/node-browserify
+[mocha]: http://mochajs.org/
+[chai]: http://chaijs.com
+[istanbul]: https://github.com/gotwarlost/istanbul
+[testling]: https://ci.testling.com
+
+[node-buffer]: http://nodejs.org/api/buffer.html
+[browser-buffer]: https://github.com/feross/buffer

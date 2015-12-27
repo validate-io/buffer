@@ -38,17 +38,32 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "chai": "2.x.x",
+    "chai": "3.x.x",
     "mocha": "2.x.x",
-    "coveralls": "^2.11.1",
-    "istanbul": "^0.3.0",
+    "codecov.io": "^0.1.5",
+    "istanbul": "^0.4.1",
     "jshint": "2.x.x",
-    "jshint-stylish": "^1.0.0"
+    "jshint-stylish": "2.x.x",
+    "testling": "^1.7.1"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": [
+      "test/*.js"
+    ],
+    "browsers": [
+      "iexplore/6.0..latest",
+      "firefox/3.0..latest",
+      "firefox/nightly",
+      "chrome/4.0..latest",
+      "chrome/canary",
+      "opera/10.0..latest",
+      "opera/next",
+      "safari/4.0..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "license": "MIT"
 }
