@@ -14,10 +14,6 @@ $ npm install validate.io-buffer
 For use in the browser, use [browserify][browserify].
 
 
-__Note__: while the module does not have any dependencies, the module is really only useful in the browser when combined with a browserified [Buffer][browser-buffer] module.
-
-
-
 ## Usage
 
 ``` javascript
