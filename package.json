@@ -13,9 +13,12 @@
     }
   ],
   "scripts": {
-    "test": "mocha",
-    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
-    "codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+    "test": "if [ \"${TRAVIS}\" ]; then npm run test-ci; else npm run test-local; fi",
+    "test-local": "tape \"./test/*.js\" | tap-spec",
+    "test-ci": "npm run test-local && xvfb-run npm run test-browsers",
+    "test-cov": "istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
+    "test-browsers": "browserify ./test/*.js | testling | tap-spec",
+    "coverage": "istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
   },
   "main": "./lib",
   "repository": {
@@ -38,16 +41,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "chai": "3.x.x",
-    "mocha": "2.x.x",
+    "browserify": "12.x.x",
+    "chai": "^3.4.1",
     "codecov.io": "^0.1.5",
     "istanbul": "^0.4.1",
     "jshint": "2.x.x",
     "jshint-stylish": "2.x.x",
-    "testling": "^1.7.1"
+    "tap-spec": "4.x.x",
+    "tape": "4.x.x",
+    "testling": "1.x.x"
   },
   "testling": {
-    "harness": "mocha-bdd",
     "files": [
       "test/*.js"
     ],

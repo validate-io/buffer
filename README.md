@@ -1,6 +1,6 @@
 buffer
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Validates if a value is a [Buffer][node-buffer] object.
 
@@ -10,8 +10,6 @@ buffer
 ``` bash
 $ npm install validate.io-buffer
 ```
-
-For use in the [browser][browser-buffer], use [browserify][browserify].
 
 
 ## Usage
@@ -30,6 +28,11 @@ var value = new Buffer( [1,2,3,4] );
 var bool = isBuffer( value );
 // returns true
 ```
+
+
+## Notes
+
+* 	Validates both [Node.js][node-buffer] and [browser][browser-buffer] (polyfill) `Buffer` objects.
 
 
 ## Examples
@@ -54,11 +57,12 @@ $ node ./examples/index.js
 ```
 
 
+---
 ## Tests
 
 ### Unit
 
-Unit tests use the [Mocha][mocha] test framework with [Chai][chai] assertions. To run the tests, execute the following command in the top-level application directory:
+This repository uses [tape][tape] for unit tests. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -84,13 +88,19 @@ $ make view-cov
 
 ### Browser Support
 
-This repository uses [Testling][testling] as its browser testing tool. To run the tests in web browsers, execute the following command in the top-level application directory:
+This repository uses [Testling][testling] for browser testing. To run the tests in a (headless) local web browser, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test-browsers
 ```
 
-[![browser support][testling-image]][testling-url]
+To view the tests in a local web browser,
+
+``` bash
+$ make view-browser-tests
+```
+
+<!-- [![browser support][browsers-image]][browsers-url] -->
 
 
 ---
@@ -107,11 +117,11 @@ Copyright &copy; 2015. Athan Reines.
 [npm-image]: http://img.shields.io/npm/v/validate.io-buffer.svg
 [npm-url]: https://npmjs.org/package/validate.io-buffer
 
-[travis-image]: http://img.shields.io/travis/validate-io/buffer/master.svg
-[travis-url]: https://travis-ci.org/validate-io/buffer
+[build-image]: http://img.shields.io/travis/validate-io/buffer/master.svg
+[build-url]: https://travis-ci.org/validate-io/buffer
 
-[codecov-image]: https://img.shields.io/codecov/c/github/validate-io/buffer/master.svg
-[codecov-url]: https://codecov.io/github/validate-io/buffer?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/validate-io/buffer/master.svg
+[coverage-url]: https://codecov.io/github/validate-io/buffer?branch=master
 
 [dependencies-image]: http://img.shields.io/david/validate-io/buffer.svg
 [dependencies-url]: https://david-dm.org/validate-io/buffer
@@ -125,9 +135,7 @@ Copyright &copy; 2015. Athan Reines.
 [testling-image]: https://ci.testling.com/validate-io/buffer.png
 [testling-url]: https://ci.testling.com/validate-io/buffer
 
-[browserify]: https://github.com/substack/node-browserify
-[mocha]: http://mochajs.org/
-[chai]: http://chaijs.com
+[tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul
 [testling]: https://ci.testling.com
 
